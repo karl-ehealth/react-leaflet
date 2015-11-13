@@ -2,3 +2,8 @@ sudo: false
 language: node_js
 node_js:
   - 5
+before_install:
+  # install @ehealthafrica/xxx packages from our npm enterprise
+  - echo "//npme.eocng.org/:_authToken=$NPM_TOKEN" >> .npmrc
+after_success:
+  - npm run semantic-release && scripts/docker-build.sh

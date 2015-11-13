@@ -1,6 +1,5 @@
 {
-  "name": "react-leaflet",
-  "version": "0.8.1",
+  "name": "@ehealthafrica/react-leaflet",
   "description": "React components for Leaflet maps",
   "main": "lib/index.js",
   "scripts": {
@@ -17,7 +16,8 @@
     "prepublish": "npm ls && npm start",
     "examples": "webpack-dev-server --config ./example/webpack.config.js",
     "lint": "eslint ./src",
-    "lintAndTest": "npm run lint && jest"
+    "lintAndTest": "npm run lint && jest",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -59,7 +59,8 @@
     "react-dom": "^0.14.1",
     "react-transform-hmr": "^1.0.1",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1"
+    "webpack-dev-server": "^1.12.1",
+    "semantic-release": "^4.3.5"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
@@ -71,5 +72,8 @@
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/react-dom"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://npme.eocng.org/"
   }
 }
