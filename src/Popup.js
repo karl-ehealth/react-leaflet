@@ -11,6 +11,7 @@ export default class Popup extends MapComponent {
     map: PropTypes.instanceOf(Map),
     popupContainer: PropTypes.object,
     position: latlngType,
+    open: PropTypes.bool
   };
 
   componentWillMount() {
@@ -48,6 +49,10 @@ export default class Popup extends MapComponent {
 
     if (this.leafletElement._isOpen) {
       this.renderPopupContent();
+    }
+
+    if (this.props.open) {
+      this.popupContainer.openPopup()
     }
   }
 

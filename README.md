@@ -86,12 +86,12 @@ This library uses React components as an interface, but not the virtual DOM, as 
 
 ### Events
 
-Leaflet exposes its own events, different from React. You can listen to them using React-Leaflet by adding a callback to a property prefixed by `onLeaflet` or simply `on`. Ex: `<Map onLeafletMoveend={this.handleMoveend}>...</Map>`.  
+Leaflet exposes its own events, different from React. You can listen to them using React-Leaflet by adding a callback to a property prefixed by `onLeaflet` or simply `on`. Ex: `<Map onLeafletMoveend={this.handleMoveend}>...</Map>`.
 Check Leaflet documentation for the events associated to each component.
 
 ### Components
 
-The properties documented for each component are the ones aimed to be supported (tested and made dynamic when possible) by React-Leaflet.  
+The properties documented for each component are the ones aimed to be supported (tested and made dynamic when possible) by React-Leaflet.
 All other properties are passed as the `options` argument to their corresponding Leaflet element and should work fine for static maps, it is however unlikely that they would updated if you change them afterwards.
 
 You can directly access the Leaflet element created by a component using the `getLeafletElement()` method on this component. This leaflet element is usually created in `componentWillMount()`, except for the `Map` component where it can only be created after the `<div>` container is rendered.
@@ -102,12 +102,12 @@ These components are base classes used by other components. They can be extended
 
 ##### MapComponent
 
-Base class extending `React.Component` and handling events binding and unbind.  
+Base class extending `React.Component` and handling events binding and unbind.
 It exposes a `getLeafletElement()` method to access the `Leaflet` object created for the component.
 
 ##### MapControl
 
-Base class extending `React.Component` for controls.  
+Base class extending `React.Component` for controls.
 It exposes a `getLeafletElement()` method to access the `Leaflet` object created for the control.
 
 ##### MapLayer
@@ -159,6 +159,7 @@ This is the top-level component that must be mounted for children ones to be ren
 The Popup children will be rendered using `ReactDOM.render()`, they must be valid React elements.
 
 - `position: latLng` (optional, dynamic)
+- `open: boolean` (optional, dynamic)
 
 #### Raster Layers
 
@@ -236,7 +237,7 @@ Use the `LayerGroup` wrapper component to group children layers together.
 
 ## Creating custom components
 
-If you want to create custom components, for example Leaflet plugins, you could extend one of the [base components](https://github.com/PaulLeCam/react-leaflet#base-components) depending on the type of component you want to implement.  
+If you want to create custom components, for example Leaflet plugins, you could extend one of the [base components](https://github.com/PaulLeCam/react-leaflet#base-components) depending on the type of component you want to implement.
 The created Leaflet map instance is injected by the `Map` component to all its children as the `map` property. Make sure to inject it in your component's children as well.
 
 ## Changelog
@@ -245,5 +246,5 @@ See [CHANGELOG](https://github.com/PaulLeCam/react-leaflet/blob/master/CHANGELOG
 
 ## License
 
-MIT  
+MIT
 See [LICENSE](https://github.com/PaulLeCam/react-leaflet/blob/master/LICENSE) file.
