@@ -52,7 +52,7 @@ export default class Popup extends MapComponent {
     }
 
     if (this.props.open) {
-      this.popupContainer.openPopup()
+      this.props.popupContainer.openPopup()
     }
   }
 
