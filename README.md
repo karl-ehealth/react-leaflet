@@ -1,3 +1,12 @@
+# Marked as deprecated
+
+Fork was used for a short while by guinea-connect. Is written out now:
+Todo: 
+* unpublish @ehealthafrica/react-leaflet
+* remove this repo
+
+
+
 # React-Leaflet
 
 React components for Leaflet maps.
